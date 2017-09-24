@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import App from './App';
 import { NavLink } from "react-router-dom";
 
 export default class BaseLayout extends Component {
@@ -11,17 +10,17 @@ export default class BaseLayout extends Component {
             <div className="navbar-header">
               <ul className="nav navbar-nav">
                 <li>
-                  <NavLink exact to="/">
+                  <NavLink activeClassName="selected" exact to="/">
                     DEV’S DEV BLOG
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/create">
+                  <NavLink activeClassName="selected" to="/create">
                     CREATE POST
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/show">
+                  <NavLink activeClassName="selected" to="/show">
                     SHOW ALL POSTS
                   </NavLink>
                 </li>
@@ -30,7 +29,6 @@ export default class BaseLayout extends Component {
           </div>
         </nav>
         {this.props.children}
-        <App />
       </div>
     );
   }
