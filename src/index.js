@@ -11,13 +11,13 @@ import PostList from "./components/PostList";
 import ShowPost from "./components/ShowPost";
 
 ReactDOM.render(
-  
+
   <BrowserRouter>
     <BaseLayout>
       <Switch>
         <Route exact path="/" component={App} />
         <Route path="/create" component={CreatePost} />
-        <Route path="/show" component={PostList} />
+        <Route exact path="/show" component={PostList} />
         <Route path="/show/:id" component={ShowPost} />
       </Switch>
     </BaseLayout>
