@@ -5,13 +5,13 @@ export default class BaseLayout extends Component {
   render() {
     return (
       <div className="container-fluid nav">
-        <nav className="row navbar navbar-light">
+        <nav className="row navbar">
           <div className="container-fluid">
             <div className="navbar-header">
               <ul className="nav navbar-nav">
                 <li>
                   <NavLink activeClassName="selected" exact to="/">
-                    DEV’S DEV BLOG
+                    HOME
                   </NavLink>
                 </li>
                 <li>

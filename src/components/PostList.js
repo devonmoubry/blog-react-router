@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 class List extends Component {
@@ -6,16 +6,16 @@ class List extends Component {
     let blogs = this.props.blogs;
     let List = blogs.map(blog => {
       return (
-        <li key={blog._id}>
+        <li className="list-group-item" key={blog._id}>
           <Link to={`/show/${blog._id}`}>{blog.blogTitle}</Link>
         </li>
       );
     });
     return (
-      <div>
-        {List}
+      <div className="card">
+        <ul className="list-group">{List}</ul>
       </div>
-    )
+    );
   }
 }
 
@@ -30,26 +30,25 @@ export default class PostList extends Component {
   componentDidMount() {
     let url = "https://tiny-lasagna-server.herokuapp.com/collections/blogger/";
     fetch(url)
-    .then(response => {
-      return response.json();
-    })
-    .then(data => {
-      this.setState({ blogs: data });
-    })
-    .catch(error => {
-      console.log("Error with Fetching : ", error);
-    })
+      .then(response => {
+        return response.json();
+      })
+      .then(data => {
+        this.setState({ blogs: data });
+      })
+      .catch(error => {
+        console.log("Error with Fetching : ", error);
+      });
   }
 
   render() {
     return (
-      <div>
-        <h1>PostList</h1>
-        <div>
+      <div className="container-fluid jumbotron lead">
+        <h1 className="display-3">Show All Posts</h1>
+        <div className="card">
           <List blogs={this.state.blogs} />
         </div>
       </div>
     );
   }
-
 }

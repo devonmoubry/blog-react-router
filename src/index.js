@@ -11,7 +11,6 @@ import PostList from "./components/PostList";
 import ShowPost from "./components/ShowPost";
 
 ReactDOM.render(
-
   <BrowserRouter>
     <BaseLayout>
       <Switch>
@@ -21,7 +20,7 @@ ReactDOM.render(
         <Route path="/show/:id" component={ShowPost} />
       </Switch>
     </BaseLayout>
-  </BrowserRouter>
-
-  , document.getElementById("root"));
+  </BrowserRouter>,
+  document.getElementById("root")
+);
 registerServiceWorker();
