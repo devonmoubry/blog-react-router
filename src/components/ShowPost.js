@@ -19,8 +19,7 @@ export default class ShowPost extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      postDetails: {},
-      id: ""
+      postDetails: {}
     };
   }
 
@@ -30,7 +29,7 @@ export default class ShowPost extends Component {
     fetch(url)
       .then(results => results.json())
       .then(responseData => {
-        this.setState({ postDetails: responseData, id: id });
+        this.setState({ postDetails: responseData });
       })
       .catch(error => {
         console.log("Error with Fetching : ", error);
@@ -42,7 +41,7 @@ export default class ShowPost extends Component {
       <div className="container-fluid">
         <h1 className="display-3">ShowPost</h1>
         <div className="container-fluid">
-          <Post postDetails={this.state.postDetails} id={this.state.id} />
+          <Post postDetails={this.state.postDetails} />
         </div>
       </div>
     );
